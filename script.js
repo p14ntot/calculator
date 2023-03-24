@@ -1,39 +1,72 @@
-let a=10
-let b=10
-let operator=0
+let firstDigits=''
+let secondDigits=''
+let operator=''
 let alarm
 
 
 
-const btn1=document.querySelector("#btn1");
-btn1.addEventListener
+const result = document.querySelector('.result');
+const buttons = document.querySelectorAll('.btn');
 
 
 
 
-function add(a,b){
+
+
+buttons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    const currentButton = buttons[index];  // stores the reference to the button
+    const value = currentButton.textContent.trim(); // retrieves the text content of the button and stores it 
     
-    console.log(a+b);
+    // check for button operator
+    if(value==="X" || value==="+" || value==="-" || value==="/"){
+        operator=checkOperator(operator,value)
+        return;
+    }
+
+    if (!operator) {
+    firstDigits= firstDigits+ value;
+    console.log(firstDigits);
+    }
+    else{
+        secondDigits= secondDigits + value
+        console.log(secondDigits)
+    }
+
+
+
+  });
+});
+
+
+
+
+
+
+function checkOperator(operator,value){
+    if (!operator) {
+        operator=operator+value;
+        console.log(operator)
+        return operator;
+    }
+    else{
+        operator='';
+        operator=operator+value;
+        console.log(operator);
+        return operator;
+    }
 }
 
-function subtract(a,b){
-    
-    console.log(a-b);
-}
-
-function multiply(a,b){
-    
-    console.log(a*b);
-}
-
-function devide(a,b){
-    
-    console.log(a/b);
-}
-
-function operate(a,b,c){
 
 
 
-}
+
+
+
+
+
+
+
+
+
 

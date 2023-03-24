@@ -16,6 +16,7 @@
     height: 170px;
     background-color: rgb(241, 238, 238);
     border-radius: 20px;
+    display: flex;
 }
 
 .second{
@@ -45,6 +46,15 @@
 
 #btn15{
     width: 100px;
+}
+
+
+
+#variables{
+    width: 100%;
+    height: 50px;
+    border: 4px solid black;
+    
 }
 
 
