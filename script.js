@@ -1,8 +1,10 @@
 let firstDigits = '';
 let secondDigits = '';
 let operator = '';
+let all=''
 
-const result = document.querySelector('.result');
+const result = document.querySelector('#variables');
+const input = document.querySelector('#input')
 const buttons = document.querySelectorAll('.btn');
 
 buttons.forEach((button, index) => {
@@ -11,15 +13,25 @@ buttons.forEach((button, index) => {
     const value = currentButton.textContent.trim();
     
     if (value === "+" || value === "-" || value === "/" || value === "X") {
-        operator = value;
-        console.log( operator);
-    } else {
+        
+      operator = value;
+      console.log( operator);
+      all+=operator;
+    
+      } else {
         if (!operator) {
+          
           firstDigits = firstDigits + value;
           console.log( firstDigits);
+          
+          input.textContent = firstDigits
+          all+=firstDigits
+
+        
         } else if (value === "=") {
             console.log( value);
-            let total = calculate(firstDigits, operator, secondDigits);
+            all+=value
+            let total = calculate(firstDigits, operator, secondDigits,all);
             
         } else {
           secondDigits = secondDigits + value;
@@ -27,9 +39,10 @@ buttons.forEach((button, index) => {
         }
     }
   });
+  result.textContent = all
 });
 
-function calculate(first, operator, second) {
+function calculate(first, operator, second,all) {
     
     let total = null;
     
@@ -37,20 +50,23 @@ function calculate(first, operator, second) {
     if (operator === '+') {
         total = parseFloat(first) + parseFloat(second);
         console.log(total);
+        all+=all
     
     } else if (operator === '-') {
         total = parseFloat(first) - parseFloat(second);
         console.log(total);
+        all+=all
     
     
     } else if (operator === 'X') {
         total = parseFloat(first) * parseFloat(second);
         console.log(total);
-    
+    all+=all
     
     } else if (operator === '/') {
         total = parseFloat(first) / parseFloat(second);
         console.log(total);
+        all+=all
     }
     
     
