@@ -51,15 +51,16 @@
 
 
 
-#variables{
+#answer{
     width: 100%;
     height: 50px;
-    border: 4px solid black;
     
+    text-align: center;
+    padding-top: 30px;
 }
 
 #input{
-    border: 4px solid black;
+    
     height: 80%;
     text-align: center;
     padding-top: 30px;
@@ -69,3 +70,17 @@
 
 
 
+.btnOp{
+    width: 80px;
+    height: 50px;
+    border-radius: 40px;
+    margin: 5px;
+    font-weight: bold;
+    font-size: 1.3em;
+    
+}
+
+.btnOp:hover{
+    box-shadow: 0 0 10px black;
+    cursor: pointer;
+}
